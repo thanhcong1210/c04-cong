@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>                     <!--tính cước điện thoại-->
+<body>
+<form action="">
+    <h2>Tính cước điện thoại</h2>
+    nhập thời gian gọi (giây): <input type="text" id="ip_thoigiangoi"> <br>
+    <input type="button" value="kiểm tra" onclick="check()"> <br>
+    <text id="t_cuocdienthoai"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let thoigianGoi = parseFloat(document.getElementById('ip_thoigiangoi').value);
+        let cuocdienthoai = Math.round((thoigianGoi * 1650 / 50) * 100)/100;
+        if (isNaN(thoigianGoi)) {
+            alert(`Error!`);
+        } else {
+            document.getElementById(`t_cuocdienthoai`).innerHTML = `cước điện thoại của bạn là ${cuocdienthoai} vnđ`;
+        }
+    }
+</script>
+</html>

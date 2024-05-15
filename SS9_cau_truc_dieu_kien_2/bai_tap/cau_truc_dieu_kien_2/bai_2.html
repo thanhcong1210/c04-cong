@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>             <!--Chuyển từ met sang feet-->
+<body>
+<form action="">
+    <h2>chuyển từ met sang feet</h2>
+    nhập met : <input type="text" id="ip_met"><br>
+    <input type="button" value="chuyển đổi" onclick="chuyendoi()"> <br>
+    <text id="t_feet"></text>
+</form>
+<script>
+    function chuyendoi() {
+        let met = parseFloat(document.getElementById('met').value);
+        let feet = Math.round((met * 3.2808) * 100) / 100;
+        if (isNaN(met)) {
+            alert('error');
+        } else {
+            document.getElementById('t_feet').innerHTML = `feet : ${feet}`;
+        }
+    }
+</script>
+</body>
+</html>

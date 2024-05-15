@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ĐĂNG KÝ HỌC VIÊN</title>
+</head>
+<body>
+<h2>ĐĂNG KÝ HỌC VIÊN</h2>
+<form>
+    <table>
+        <tr>
+            <td>Họ và tên</td>
+            <td><input type="text" name="full_name" size="40"></td>
+        </tr>
+        <tr>
+            <td>Ngày sinh</td>
+            <td><input type="text" name="ngay_sinh" size="20"></td>
+        </tr>
+        <tr>
+            <td>Giới tính</td>
+            <td>
+                <label><input type="radio" name="gioi_tinh" value="Nam">Nam</label>
+                <label><input type="radio" name="gioi_tinh" value="Nữ">Nữ</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Địa chỉ</td>
+            <td><textarea name="dia_chi" id="dia_chi" cols="50" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td>Lớp</td>
+            <td>
+                <label><select name="lop">
+                    <option>-chọn lớp-</option>
+                    <option>-a1-</option>
+                    <option>-a2-</option>
+                    <option>-a3-</option>
+                    <option>-a4-</option>
+                    <option>-a5-</option>
+                </select></label>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td>Điện thoại</td>
+            <td><input type="text" name="dien_thoai"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Đăng ký</button>
+                <button type="reset">Nhập lại</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

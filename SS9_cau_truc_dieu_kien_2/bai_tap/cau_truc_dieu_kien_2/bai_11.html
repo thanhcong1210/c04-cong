@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thu nhập cá nhân</title>
+</head>
+<body>
+<form action="">
+    <h2>thuế thu nhập</h2>
+    <input type="text" id="ip_thunhap"> <br>
+    <input type="button" onclick="check()" value="tinh thue"> <br>
+    <text id="t_tien thue"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let thunhap = parseInt(document.getElementById('ip_thunhap').value);
+        let tienthue;
+        if(isNaN(thunhap)) {
+            alert('error');
+        }else {
+            if( thunhap >= 20000){
+                tienthue = thunhap * 5 / 100;
+            }else if( thunhap >= 10000000) {
+                tienthue = thunhap * 10 / 100;
+            }else if ( thunhap >= 30000000) {
+                tienthue = thunhap * 15 / 100;
+            }else {
+                tienthue = thunhap * 20 / 100;
+            }
+            document.getElementById('t_tienthue').innerHTML = `tiền thuế của bạn là ${tienthue}`
+        }
+    }
+</script>
+</html>

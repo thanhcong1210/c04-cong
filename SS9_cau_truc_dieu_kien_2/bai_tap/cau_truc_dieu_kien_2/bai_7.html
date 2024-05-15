@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>             <!--giải phương trình bậc 2-->
+<body>
+<form action="">
+    <h2>giải phương trình bậc 2 : Ax<sup>2</sup> + Bx + Cx = 0</h2>
+    nhập A : <input type="text" id="ip_A"> <br>
+    nhập B : <input type="text" id="ip_B"> <br>
+    Nhập C : <input type="text" id="ip_C"> <br>
+    <input type="button" value="tính toán" onclick="giaiPTB2()"> <br>
+    <text id="t_PTB2"></text>
+</form>
+</body>
+<script>
+    function giaiPTB2() {
+        let A = parseFloat(document.getElementById('ip_A').value);
+        let B = parseFloat(document.getElementById('ip_B').value);
+        let C = parseFloat(document.getElementById('ip_C').value);
+        if (isNaN(A)) {
+            alert('rerror')
+        } else if (isNaN(B)) {
+            alert('rerror')
+        } else if (isNaN(C)) {
+            alert('rerror')
+        } else {
+            if (A == 0) {
+                if (B == 0) {
+                    if (C == 0) {
+                        document.getElementById('t_PTB2').innerHTML = ` phương trình vô số nghiệm `;
+                    } else {
+                        document.getElementById('t_PTB2').innerHTML = ` phương trình vô nghiệm `;
+                    }
+                } else {
+                    let ketqua = Math.round((-C / B) * 100) / 100;
+                    document.getElementById('t_PTB2').innerHTML = ` phương trình có 1 nghiệm duy nhất x = ${ketqua}`;
+                }
+            } else {
+                let delta = B * B - 4 * A * C;
+                if (delta < 0) {
+                    document.getElementById('t_PTB2').innerHTML = ` phương trình vô nghiệm `
+                } else if (delta == 0) {
+                    let nghiemkep = Math.round((-B / (2 * A)) * 100) / 100;
+                    document.getElementById('t_PTB2').innerHTML = ` phương trình có 1 nghiệm kép x1 = x2 = ${nghiemkep}`;
+                } else {
+                    let x1 = Math.round((((-B + Math.sqrt(delta)) / (2 * A)) * 100) / 100);
+                    let x2 = Math.round((((-B - Math.sqrt(delta)) / (2 * A)) * 100) / 100);
+                    document.getElementById('t_PTB2').innerHTML = ` phương trình có 2 nghiệm x1 = ${x1} x2 = ${x2}`
+                }
+            }
+        }
+    }
+</script>
+</html>

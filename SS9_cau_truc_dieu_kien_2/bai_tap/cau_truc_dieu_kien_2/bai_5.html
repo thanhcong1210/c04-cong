@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>                 <!--tính diện tich tam giác vuông khi biết 2 cạnh a và b-->
+<body>
+    <h2>diện tích tam giác vuông</h2>
+        nhập cạnh a : <input type="text" id="ip_a"> <br>
+        nhập cạnh b : <input type="text" id="ip_b"> <br>
+        <input type="button" value="tinhtoan" onclick="dientichtgv()"><br>
+        <text id="t_dientich"></text>
+</body>
+<script>
+    function dientichtgv() {
+        let a = parseFloat(document.getElementById('ip_a').value);
+        let b = parseFloat(document.getElementById('ip_b').value);
+        let tinhdientich = Math.round((1 / 2 * a * b) * 100) / 100;
+        if (isNaN(a)){
+            alert(`error`)
+        }else if (isNaN(b)){
+            alert(`error`)
+        }else {
+            document.getElementById("t_dientich").innerHTML = `dientich : ${dientichTGV}`;
+        }
+    }
+</script>
+</html>

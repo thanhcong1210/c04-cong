@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+<form action="">
+    <h2>Tính lãi ngân hàng</h2>
+    Số tiền ban đầu : <input type="text" id="ip_TienBanDau"> <br>
+    Số tháng cho vay : <input type="text" id="ip_thang"> <br>
+    Lãi xuất hàng tháng (% / năm): <input type="text" id="ip_LaiXuat"> <br>
+    <input type="button" onclick="check()" value="Tính lãi"> <br>
+    <text id="t_TienLai"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let tienBanDau = parseInt(document.getElementById('ip_TienBanDau').value);
+        let thang = parseInt(document.getElementById('ip_thang').value);
+        let laiXuat = parseFloat(document.getElementById('ip_LaiXuat').value);
+        if (isNaN(tienBanDau) || isNaN(thang) || isNaN(laiXuat)) {
+            alert(`Error`);
+        } else {
+            let tienLai = (tienBanDau * laiXuat / 100 / 12 * thang);
+            document.getElementById('t_TienLai').innerHTML = `Tiền lãi của bạn là: ${tienLai} vnđ`;
+        }
+    }
+</script>
+</html>

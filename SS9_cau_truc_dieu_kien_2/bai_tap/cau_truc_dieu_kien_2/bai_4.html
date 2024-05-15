@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>                     <!--tính diện tích hcn khi biết 2 cạnh a và b-->
+<body>
+<h2>diện tích hcn</h2>
+cạnh a : <input type="text" id="ip_a"> <br>
+cạnh b : <input type="text" id="ip_b"> <br>
+<input type="button" value="tinhtoan" onclick="tinhdientichhcn()"> <br>
+<text id="t_dientich"></text>
+</body>
+<script>
+    function tinhdientichhcn() {
+        let a = parseFloat(document.getElementById('ip_a').value);
+        let b = parseFloat(document.getElementById('ip_b').value);
+        let tinhdientich = Math.round((a * b) * 100) / 100;
+        if (isNaN(a)){
+            alert(`error`)
+        } else if (isNaN(b)){
+            alert(`error`)
+        } else {
+            document.getElementById('t_dientich').innerHTML = `tinhdientich : ${tinhdientich}`;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <h2>kiểm tra tuổi</h2>
+    nhập tuổi : <input type="text" id="ip_tuoi"> <br>
+    <input type="button" value="kiểm tra" onclick="check()"> <br>
+    <text id="t_tuoi"></text>
+</form>
+</body>
+<script>
+    function check() {
+        let tuoi = document.getElementById('ip_tuoi').value;
+        if (isNaN(tuoi)) {
+            alert('error');
+        } else {
+            if (tuoi % 1 == 0 && tuoi > 0 && tuoi < 120) {
+                document.getElementById('t_tuoi').innerHTML = `${tuoi} la tuoi cua mot nguoi`;
+            } else {
+                document.getElementById('t_tuoi').innerHTML = `${tuoi} khong phai la tuoi cua mot nguoi`;
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input;
+    const pi =3.14;
+
+    input = prompt("Nhập biến R:");             // nhập bán kính của hình tròn
+
+    let r = parseInt(input);
+
+    if (r<=0){
+        alert("nhập r > 0");                    // nếu giá trị bằng 0 hoặc số âm sẽ hiển thị ra nhắc nhở
+    } else {
+        let s = r * pi * r;
+        document.write("Diện tích hình tròn S = " + s);
+    }
+</script>
+</body>
+</html>

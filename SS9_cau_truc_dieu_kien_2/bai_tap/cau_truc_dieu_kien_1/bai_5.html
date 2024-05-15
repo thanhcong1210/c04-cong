@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>             <!--xếp loại học lực dựa trên bài kiểm tra, giữa kì, cuối kì-->
+<body>
+<script>
+    let KT = +prompt('nhap bai kiem tra')
+    let GK = +prompt('nhap bai giua ki')
+    let CK = +prompt('nhap bai cuoi ki')
+    let DTB = (KT + (GK*2) + (CK*3)) / 6;
+    if (DTB >= 9) {
+        alert('hoc luc gioi')
+    }else
+        if (DTB >= 7) {
+            alert('hoc luc kha')
+        }else
+            if (DTB >=5) {
+                alert('hoc luc trung binh')
+            } else {
+                    alert('hoc luc yeu')
+                }
+            document.write('diem trung binh : ' + DTB);
+</script>
+</body>
+</html>

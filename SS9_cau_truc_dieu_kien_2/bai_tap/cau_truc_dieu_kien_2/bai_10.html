@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính giá điện</title>
+</head>
+<body>
+<h2>tính tiền điện</h2>
+<input type="text" id="ip_dien" placeholder="kwh"> <br>
+<br>
+<button type="button" onclick="check()">kiểm tra điện</button> <br>
+<h2 id="tien"></h2>
+<script>
+    function check() {
+        let dien = document.getElementById('ip_dien').value;
+        if (dien > 50) {
+            document.getElementById('tien').innerHTML = `so tien dien la : ` + dien * 2000 ;
+        } else {
+            document.getElementById('tien').innerHTML = `so tien dien la : ` + dien * 1500 ;
+        }
+    }
+</script>
+</body>
+</html>

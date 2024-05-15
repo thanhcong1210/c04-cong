@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>                     <!--giải phương trình bậc 1-->
+<body>
+<h2>phương trình bậc 1</h2>
+nhập a : <input type="text" id="ip_a"><br>
+nhập b : <input type="text" id="ip_b"><br>
+<input type="button" value="tinhtoan" onclick="giaiphuongtrinh()"> <br>
+<text id="t_ptb1"></text>
+</body>
+<script>
+    function giaiphuongtrinh() {
+        let a = parseFloat(document.getElementById('ip_a').value);
+        let b = parseFloat(document.getElementById('ip_b').value);
+        if (isNaN(a)) {
+            alert(`error`);
+        } else if (isNaN(b)) {
+            alert(`error`);
+        } else if (a == 0) {
+            document.getElementById('t_ptb1').innerHTML = `phuong trinh vo so nghiem`;
+        } else if (b == 0) {
+            document.getElementById('t_ptb1').innerHTML = `phuong trinh vo nghiem`;
+        } else {
+            let x = Math.round((-b / a) * 100) / 100;
+            document.getElementById('t_ptb1').innerHTML = `x = ${x}`;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>             <!--chuyển từ độ C sang độ F -->
+<body>
+<form action="">
+    <h2>chuyển từ độ C sang F</h2>
+    nhập độ C : <input type="text" id="doC">
+    <input type="button" value="chuyển đổi" onclick="chuyendoi()"> <br>
+    <text id="t_doF"></text>
+</form>
+</body>
+<script>
+    function chuyendoi() {
+        let doC = parseFloat(document.getElementById('doC').value);
+        let doF = doC * 9 / 5 + 32;
+        if (isNaN(doC)) {
+            alert('error')
+        } else {
+            document.getElementById('t_doF').innerHTML = `độ F : ${doF}`;
+        }
+    }
+</script>
+</html>
