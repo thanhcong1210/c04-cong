@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = 0, b = 1, temp;
+    let count = 20;
+    let i = 0;
+    for (let j = 1; j < count; j++) {
+        temp = a + b;
+        a = b;
+        b = temp;
+        i = i + temp;
+        document.write(i);
+    }
+</script>
+</body>
+</html>

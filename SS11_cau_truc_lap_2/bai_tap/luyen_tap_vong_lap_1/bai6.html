@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let text = '';
+    let count = 0;
+    let sum = 0;
+    for (let i = 1; i < 30; i++) {
+        if (i % 7 == 0) {
+            count++;
+            sum += i;
+            text += `${i} + `;
+        }
+    }
+    text = text.substring(0, text.length - 2);
+    document.write(`tong 30 so chia het cho 7: <br> ${text} = ${sum} `);
+</script>
+</body>
+</html>
+
+
+
