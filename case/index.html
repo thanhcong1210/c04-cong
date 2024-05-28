@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="font/fontawesome-free-6.5.2/css/all.css" rel="stylesheet">
+</head>
+<body>
+<div id="app-music">
+    <div id="bg-art"></div>
+    <div id="cd">
+        <img id="cd-image" src="../image/17U1K0XDSZQPOHZT.jpg" alt="img">
+    </div>
+    <div id="control-player">
+        <div id="controls">
+            <div id="infor-control">
+                <h2 id="track-name">Name song</h2>
+                <p id="singer-name">Tên ca sĩ</p>
+                <div id="time">
+                    <p id="time-update">00:00</p>
+                    <p id="time-currentSong">00:00</p>
+                </div>
+                <input id="progress" type="range" min="0" max="100" step="1" value="0">
+                <audio id="audio" src=""></audio>
+
+            </div>
+            <div id="btn-control">
+                <div id="repeat">
+                    <i class="fa-solid fa-repeat"></i>
+                </div>
+                <div id="backward">
+                    <i class="fa-solid fa-backward"></i>
+                </div>
+                <div id="playing">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <div id="skip">
+                    <i class="fa-solid fa-forward"></i>
+                </div>
+                <div id="shuffle">
+                    <i class="fa-solid fa-shuffle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="list-song">
+
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

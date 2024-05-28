@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function insertNumberToArray(arr, x, index) {
+        if (index < 0 || index > arr.length) {
+            return arr;
+        }
+        arr.splice(index, 0, x)
+        return arr;
+    }
+
+    function insertNumberToArray(arr, x, index) {
+        if (index < 0 || index > arr.length) {
+            return arr;
+        }
+        let brr = [];
+        // 1  2 3 4 => 5, 2
+        // brr = 1 2
+        for (let i = 0; i < index; i++) {
+            brr.push(arr[i]);
+        }
+        // brr = 1 2 5
+        brr.push(x)
+        // brr = 1 2 5 3 4
+        for (let i = index + 1; i < arr.length; i++) {
+            brr.push(arr[i - 1]);
+        }
+        return brr;
+    }
+
+    alert(insertNumberToArray([1, 2, 3], 4, 3));
+</script>
+</body>
+</html>
