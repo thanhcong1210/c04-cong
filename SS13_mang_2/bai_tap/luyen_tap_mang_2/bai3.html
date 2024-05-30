@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let arr = ["a", "b", "c", "d", "e", 1, 2, 3, 11, 14, 15];
+    const size = arr.length;
+    let count = 0;
+    for (let i = 0; i < size; i++) {
+        if (!isNaN(parseInt(arr[i]))) {
+            count++;
+        }
+    }
+    alert("Số ký tự số có trong mảng là: " + count);
+</script>
 </body>
 </html>

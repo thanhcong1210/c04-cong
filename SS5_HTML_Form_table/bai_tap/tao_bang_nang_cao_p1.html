@@ -5,6 +5,27 @@
     <title>Bàn cờ</title>
 </head>
 <body>
+<style>
+    th, td{
+        width: 50px;
+        height: 50px;
+    }
+    table{
+        background-color: #ffb329;
+    }
+    table tr:nth-child(even) td:nth-child(even){
+        background-color: white;
+    }
+    table tr:nth-child(odd) td:nth-child(odd) {
+        background-color: white;
+    }
+    table tr:nth-child(even) td:nth-child(odd) {
+        background-color: black;
+    }
+    table tr:nth-child(odd) td:nth-child(even) {
+        background-color: black;
+    }
+</style>
 <table>
     <tr>
         <th></th>
@@ -108,25 +129,5 @@
 </table>
 </body>
 </html>
-<!--<style>-->
-<!--    th, td{-->
-<!--        width: 50px;-->
-<!--        height: 50px;-->
-<!--    }-->
-<!--    table{-->
-<!--        background-color: #ffb329;-->
-<!--    }-->
-<!--    table tr:nth-child(even) td:nth-child(even){-->
-<!--        background-color: white;-->
-<!--    }-->
-<!--    table tr:nth-child(odd) td:nth-child(odd) {-->
-<!--        background-color: white;-->
-<!--    }-->
-<!--    table tr:nth-child(even) td:nth-child(odd) {-->
-<!--        background-color: black;-->
-<!--    }-->
-<!--    table tr:nth-child(odd) td:nth-child(even) {-->
-<!--        background-color: black;-->
-<!--    }-->
-<!--</style>-->
+
 

@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<text>Nhập ký tự cần tìm:</text>
+<input type="text" id="ip_char">
+<br>
+<input type="button" value="Tìm kiếm" onclick="main(document.getElementById('ip_char').value)">
+<br>
+<text id="t_result"></text>
 </body>
+<script>
+    let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'a', 'b', 'c', 'a']
+
+    function find(char) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === char) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            return -1
+        } else {
+            return count
+        }
+    }
+
+    function main(char) {
+        if (char !== '') {
+            let result = find(char)
+            if (result == -1) {
+                document.getElementById('t_result').innerHTML = `Ký tự '${char}' không xuất hiện trong mảng`
+            } else {
+                document.getElementById('t_result').innerHTML = `Ký tự '${char}' xuất hiện ${result} lần trong mảng`
+            }
+        } else {
+            document.getElementById('t_result').innerHTML = `Error!!!`
+        }
+    }
+</script>
 </html>

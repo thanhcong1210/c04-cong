@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+            // hiển thị giá trị lớn nhất
+            // in giá trị trung bình
+    let arr = [5, 12, 24, 2, 53, 6, 5, 21, 9, 10];
+    let max = arr[0];
+    let total = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        total = total + arr[i]
+    }
+    document.write("max: " + max + "<br>");
+    document.write("Giá trị trung bình: " + total / arr.length);
+</script>
 </body>
 </html>

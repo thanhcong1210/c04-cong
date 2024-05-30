@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Add New Product</title>
 </head>
 <body>
-$END$
+<h1>Add New Product</h1>
+<table class="tieuDe">
+    <tr>
+        <th><input type="text" id="product" placeholder="New Product"/></th>
+        <th><button type="button" onclick="add(phone)">Add</button></th>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th>
+            <h3>Display All Product</h3>
+        </th>
+    </tr>
+    <tr class="product">
+        <th><h4>Product Name</h4></th>
+        <th><p id="total"></p></th>
+    </tr>
+</table>
+<table id="result">
+</table>
+
+<script>
+    let phone = ['Xiaomi Redmi Note 10', 'Apple IPhone 13 Pro','Google pixel 8 Pro'
+        ,'Samsung Galaxy Note 24 Ultra', 'Apple IPhone 15 promax', ];
+
+    function hienThi(phone) {
+        let total1 = phone.length;
+        document.getElementById('total').innerHTML = 'Total :' + total1;
+        let num = '';
+        for (let i = 0; i < phone.length; i++) {
+            num = num + "<tr>" + "<th class='text'>" + (i + 1) + " ."  + phone[i] + "</th>"
+                + "<th>" + "<button onclick='edit(phone)'>Edit</button>" + "</th>"
+                + "<th>" + "<button onclick='xoa("+ i +")'>Delete</button>" + "</th>" + "</tr>";
+        }
+        return num;
+    }
+
+    function add(phone) {
+        let newPhone = document.getElementById('product').value;
+        phone.push(newPhone);
+        document.getElementById('result').innerHTML = hienThi(phone);
+    }
+    function edit(phone) {
+        let index = prompt('Nhập số thứ tự máy muốn sửa tên:');
+        let newPhone = prompt('Nhập tên mới cho máy:');
+        phone[index - 1] = newPhone;
+        document.getElementById('result').innerHTML = hienThi(phone);
+    }
+    function xoa(i) {
+        phone.splice(i,1);
+        document.getElementById('result').innerHTML = hienThi(phone);
+    }
+    document.getElementById('result').innerHTML = hienThi(phone);
+</script>
 </body>
 </html>

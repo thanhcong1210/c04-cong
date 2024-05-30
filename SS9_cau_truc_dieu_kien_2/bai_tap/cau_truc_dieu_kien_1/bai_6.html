@@ -7,19 +7,19 @@
 <body>
 <script>
     let a = +prompt("nhập mức doanh thu bán hàng: ");
-    let b;
+    // let b;
     let c;
     if (a > 1500000) {
-        b = a * (10 / 100);
-        c = a - (a - b);
+        c = a * (10 / 100);
+        // c = a - (a - b);
         document.write("tiền hoa hồng nhận được là: " + c);
     } else if (a > 1000000) {
-        b = a * (8 / 100);
-        c = a - (a - b);
+        c = a * (8 / 100);
+        // c = a - (a - b);
         document.write("tiền hoa hồng nhận được là: " + c);
     } else {
-        b = a + (6 / 100);
-        c = a - (a - b);
+        c = a * (6 / 100);
+        // c = a - (a - b);
         document.write("tiền hoa hồng nhận được là: " + c);
     }
 </script>

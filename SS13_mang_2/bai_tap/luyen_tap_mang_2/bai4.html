@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let str = prompt("Mời nhập chuỗi của bạn");
+    let main_str = str.trim();
+    let mo_str = '';
+    for (let i = 0; i < str.length; i++) {
+        if (main_str[i] === ' ' && main_str[i + 1] === ' ') {
+            continue;
+        } else {
+            mo_str += main_str[i];
+        }
+    }
+    let count = 1;
+    for (let i of mo_str) {
+        if (i === ' ') {
+            count++;
+        }
+    }
+    alert("Số từ trong chuỗi là: " + count);
+</script>
 </body>
 </html>

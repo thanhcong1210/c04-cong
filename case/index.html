@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Music Player</title>
     <link rel="stylesheet" href="style.css">
-    <link href="font/fontawesome-free-6.5.2/css/all.css" rel="stylesheet">
+    <link href="" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <div id="app-music">
     <div id="bg-art"></div>
     <div id="cd">
-        <img id="cd-image" src="../image/17U1K0XDSZQPOHZT.jpg" alt="img">
+        <img id="cd-image" src="image/bautroi.jpg" alt="img">
     </div>
     <div id="control-player">
         <div id="controls">
@@ -18,13 +19,17 @@
                 <h2 id="track-name">Name song</h2>
                 <p id="singer-name">Tên ca sĩ</p>
                 <div id="time">
-                    <p id="time-update">00:00</p>
-                    <p id="time-currentSong">00:00</p>
-                </div>
-                <input id="progress" type="range" min="0" max="100" step="1" value="0">
-                <audio id="audio" src=""></audio>
+                    <div id="progress-container">
+                        <p id="time-update">00:00</p>
+                        <input id="progress" type="range" min="0" max="100" step="1" value="0">
+                        <p id="time-currentSong">00:00</p>
+                    </div>
 
+                </div>
+
+                <audio id="audio" src=""></audio>
             </div>
+
             <div id="btn-control">
                 <div id="repeat">
                     <i class="fa-solid fa-repeat"></i>
@@ -44,9 +49,16 @@
             </div>
         </div>
     </div>
-    <div id="list-song">
-
+    <div id="add-song-form" style="z-index: 1000; position: absolute">
+        <input type="text" id="new-song-name" placeholder="Song Name"><br>
+        <input type="text" id="new-singer-name" placeholder="Singer Name"><br>
+        <input type="text" id="new-song-path" placeholder="Song Path"><br>
+        <input type="text" id="new-image-path" placeholder="Image Path"><br>
+        <button id="add-song-btn">Add Song</button>
     </div>
+    <div id="song-list">    </div>
+
+    <div id="list-song"></div>
 </div>
 <script src="main.js"></script>
 </body>

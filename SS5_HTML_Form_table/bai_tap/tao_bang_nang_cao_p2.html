@@ -5,6 +5,55 @@
     <title>Lịch</title>
 </head>
 <body>
+<style>
+    p{
+        font-family: "Arial Black";
+        font-size: x-large;
+        text-align: center;
+        color:blue;
+    }
+    table{
+        border-collapse: collapse;
+    }
+    table tr:nth-child(1) th:nth-child(1){
+        background-color: red;
+        color: white;
+    }
+    table tr:nth-child(1) th:nth-child(n+2){
+        background-color: #ffb329;
+        color: white;
+    }
+    table tr:nth-child(1) th:nth-child(7){
+        background-color: blue;
+        color: white;
+    }
+    table tr:nth-child(2) td:nth-child(1) {
+        color: red;
+    }
+    table tr:nth-child(2) td:nth-child(7) {
+        color: blue;
+    }
+    table tr:nth-child(n+3) td:nth-child(1){
+        color: red;
+    }
+    table tr:nth-child(n+3) td:nth-child(7){
+        color: blue;
+    }
+    sub{
+        color: black;
+        font-size: x-small;
+    }
+    table tr:nth-child(1) th{
+        border-top: none;
+    }
+    table tr:nth-child(2) {
+        border: none;
+    }
+    table tr:nth-child(n+3) td{
+        border: solid 1px gray;
+        font-size: x-large;
+    }
+</style>
 <div style="width: 30%; margin: auto">
     <p>Tháng 10 - October</p>
     <form>
@@ -77,53 +126,4 @@
     </form>
 </div>
 </body>
-<style>
-    p{
-        font-family: "Arial Black";
-        font-size: x-large;
-        text-align: center;
-        color:blue;
-    }
-    table{
-        border-collapse: collapse;
-    }
-    table tr:nth-child(1) th:nth-child(1){
-        background-color: red;
-        color: white;
-    }
-    table tr:nth-child(1) th:nth-child(n+2){
-        background-color: #ffb329;
-        color: white;
-    }
-    table tr:nth-child(1) th:nth-child(7){
-        background-color: blue;
-        color: white;
-    }
-    table tr:nth-child(2) td:nth-child(1) {
-        color: red;
-    }
-    table tr:nth-child(2) td:nth-child(7) {
-        color: blue;
-    }
-    table tr:nth-child(n+3) td:nth-child(1){
-        color: red;
-    }
-    table tr:nth-child(n+3) td:nth-child(7){
-        color: blue;
-    }
-    sub{
-        color: black;
-        font-size: x-small;
-    }
-    table tr:nth-child(1) th{
-        border-top: none;
-    }
-    table tr:nth-child(2) {
-        border: none;
-    }
-    table tr:nth-child(n+3) td{
-        border: solid 1px gray;
-        font-size: x-large;
-    }
-</style>
 </html>

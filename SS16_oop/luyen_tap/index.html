@@ -1,10 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let list = [
+        {
+            name: 'Ip',
+            price: 100,
+            quantity: 50
+        },
+        {
+            name: 'SS',
+            price: 89,
+            quantity: 100
+        },
+        {
+            name: 'Xiaomi',
+            price: 50,
+            quantity: 120
+        }
+    ];
+
+                // tính tổng giá trị kho
+    function calculateTotalValue(items) {
+        let totalValue = 0;
+        for (let i = 0; i < items.length; i++) {
+            totalValue += items[i].price * items[i].quantity;
+        }
+        return totalValue;
+    }
+
+            // kiểm tra nó sẽ in ra các sản phẩm >= 100
+    function printItemsWithPriceGreaterOrEqual(items, threshold) {
+        console.log(`Các sản phẩm có giá >= ${threshold}:`);
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].price >= threshold) {
+                console.log(`${items[i].name} , ${items[i].price}`);
+            }
+        }
+    }
+            // tìm và hiển thị ra sản phẩm
+    function findItemByName(items, name) {
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].name.toLowerCase() === name.toLowerCase()) {
+                return items[i];
+            }
+        }
+        return null;
+    }
+
+    let totalValue = calculateTotalValue(list);
+    console.log(`Tổng giá trị của kho hàng là: ${totalValue}`);
+
+    printItemsWithPriceGreaterOrEqual(list, 100);
+
+    let productName = prompt("Nhập vào tên sản phẩm:");
+    let foundItem = findItemByName(list, productName);
+    if (foundItem) {
+        console.log(`Thông tin sản phẩm: Name: ${foundItem.name}, Price: ${foundItem.price}, Quantity: ${foundItem.quantity}`);
+    } else {
+        console.log("Không tìm thấy sản phẩm có tên: `${productName}`");
+    }
+
+</script>
 </body>
 </html>

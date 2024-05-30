@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
 </head>
 <body>
-$END$
+<script>
+    function isPrime(number){
+        let count = 0;
+
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0) {
+                count++;
+            }
+        }
+
+        if (count === 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let countPrime = 0;
+    let run = 1;
+
+    while (true) {
+        let count = 0;
+
+        // check prime number
+        // run = 1, 2, 3, 4, 5, 6...
+        if (isPrime(run)) {
+            document.write(run + ", ");
+            countPrime++;
+        }
+        // end check prime number
+
+        if (countPrime === 100) {
+            break;
+        }
+
+        run++;
+    }
+
+
+</script>
 </body>
 </html>

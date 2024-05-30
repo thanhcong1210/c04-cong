@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<text id="t_result"></text>
 </body>
+<script>
+    function convertArr(arr) {
+        let j = arr.length - 1;
+        for (let i = 0; i < arr.length / 2; i++) {
+            let temp = arr[i]
+            arr[i] = arr[j]
+            arr[j] = temp
+            j--
+        }
+    }
+
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    let result = `Mảng ban đầu: `
+    for (let i = 0; i < arr.length; i++) {
+        result += `${arr[i]} `
+    }
+
+    convertArr(arr)
+
+    result += `<br>Mảng sau khi đảo ngược: `
+    for (let i = 0; i < arr.length; i++) {
+        result += `${arr[i]} `
+    }
+    document.getElementById('t_result').innerHTML = result;
+</script>
 </html>

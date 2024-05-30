@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<label for="string">nhập từ: </label>
+<input type="text" id="string">
+<button onclick="transcript()">dịch</button>
+<p id="result"></p>
+
+<script>
+    function transcript() {
+        const arr_eng = ["banana", "apple", "orange", "pen", "book"];
+        const arr_vie = ["chuối", "táo", "cam", "bút", "sách"];
+        const string = document.getElementById("string").value;
+        const index = arr_eng.indexOf(string);
+        const result = index !== -1 ? arr_vie[index] : "Không tìm thấy từ";
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
 </body>
 </html>

@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<text>Nhập số nguyên thứ 1:</text>
+<input type="text" id="ip_number1">
+<br>
+<text>Nhập số nguyên thứ 2:</text>
+<input type="text" id="ip_number2">
+<br>
+<input type="button" value="Hoán đổi"
+       onclick="convert(document.getElementById('ip_number1').value, document.getElementById('ip_number2').value)">
+<br>
+<text id="t_result"></text>
+<script>
+    function convert(number1, number2) {
+        if (isNaN(number1) || number1 == '' || isNaN(number2) || number2 == '') {
+            document.getElementById('t_result').innerHTML = `Error!!!`
+        } else {
+            document.getElementById('ip_number1').value = `${number2}`
+            document.getElementById('ip_number2').value = `${number1}`
+            document.getElementById('t_result').innerHTML = `Hoán đổi thành công`
+        }
+    }
+</script>
 </body>
 </html>

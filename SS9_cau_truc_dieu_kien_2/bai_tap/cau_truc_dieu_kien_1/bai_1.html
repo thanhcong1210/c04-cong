@@ -6,13 +6,18 @@
 </head>
 <body>              <!--nhập số a và b, kiểm tra xem a có chia hết cho b không-->
 <script>
-    let a = +prompt("Nhập số a")
-    let b = +prompt("Nhập số b")
+    let a = +prompt("nhập số a: ");
+    let b = +prompt("nhập số b: ");
+    // cách 1 :
     if (a % b == 0) {
-        alert("a chia hết cho b")
+        alert('a chia hết cho b')
     } else {
-        alert("a không chia hết cho b")
+        alert('khong chia het')
     }
+
+    // cách 2:
+    let c = a % b == 0 ? 'a chia hết cho b' : 'a không chia hết cho b'
+    alert(c);
 </script>
 </body>
 </html>

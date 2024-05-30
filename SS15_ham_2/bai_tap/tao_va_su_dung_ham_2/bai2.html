@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function dienTich (d){
+        let pi = 3.14;
+        let s = d * pi * d;
+        return s;
+    }
+    function chuVi (d){
+        let pi = 3.14;
+        let c = 2 * pi * d;
+        return c;
+    }
+    let d = prompt('nhập: ');
+    let s = dienTich(d);
+    let c = chuVi(d);
+    document.write("diện tích hình tròn S = " + s + "<br>");
+    document.write("chu vi hình tròn C = " + c + "<br>");
+</script>
 </body>
 </html>

@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+                // tìm xem V có phải số nguyên k
+    let a = [5, 12, 24, 2, 53, 6, 5, 21, 9, 10];
+    let v = prompt("nhập số: ");
+    let flag = false;
+    for (let i = 0; i < a.length; i++) {
+        if (v == a[i]) {
+            flag = true;
+        }
+    }
+    if (flag) {
+        alert("V is in the array");
+    } else {
+        alert("V is not in the array");
+    }
+</script>
 </body>
 </html>

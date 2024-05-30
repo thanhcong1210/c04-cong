@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    document.write("<div style='width: 100px' align='right'>");
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= i; j++) {
+            document.write("*")
+        }
+        document.writeln("<br>");
+    }
+    document.write("<br>");
+    document.write("<div style='width: 100px' align='right'>");
+    for (let i = 5; i > 0; i--) {
+        for (let j = i; j > 0; j--) {
+            document.writeln("*");
+
+        }
+        document.writeln("<br>");
+    }
+    document.write("<br>");
+</script>
 </body>
 </html>

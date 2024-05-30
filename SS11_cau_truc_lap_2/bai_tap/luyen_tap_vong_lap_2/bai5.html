@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h2>Tính lãi kép ngân hàng</h2>
+Số tiền ban đầu: <input type="text" id="ip_tienBanDau"> <br>
+Số tháng cho vay: <input type="text" id="ip_thang"> <br>
+Lãi xuất hàng tháng: <input type="text" id="ip_laiXuat"> <br>
+<input type="button" value="Tính lãi" onclick="tinhLai()"> <br>
+<text id="t_laiXuat"></text>
 </body>
+<script>
+    function tinhLai() {
+        let tienBanDau = parseInt(document.getElementById(`ip_tienBanDau`).value);
+        let thangChoVay = parseInt(document.getElementById(`ip_thang`).value);
+        let lai = parseFloat(document.getElementById(`ip_laiXuat`).value);
+        let tienLai = null;
+
+        if (isNaN(tienBanDau) || isNaN(thangChoVay) || isNaN(lai)) {
+            alert(`Error!`);
+        } else if (tienBanDau <= 0 || thangChoVay <= 0 || lai <= 0) {
+            alert(`Error!`);
+        } else {
+            tienLai = tienBanDau * Math.pow((1 + (lai / 100)), thangChoVay);
+            tienLai = Math.round(tienLai * 100) / 100;
+            document.getElementById(`t_laiXuat`).innerHTML = `Tiền lãi ngân hàng: ${tienLai} VNĐ`;
+        }
+    }
+</script>
 </html>

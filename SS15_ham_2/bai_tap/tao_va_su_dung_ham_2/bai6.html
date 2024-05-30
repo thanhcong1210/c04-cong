@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<text>Nhập một số:</text>
+<input type="text" id="ip_number">
+<br>
+<input type="button" value="Kiểm tra số nguyên dương" onclick="main()">
+<br>
+<text id="t_result"></text>
+<script>
+    function checkNumber(number) {
+        if(number % 1 === 0 && number > 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+    function main() {
+        let number = document.getElementById('ip_number').value;
+        if (isNaN(number) || number == ''){
+            document.getElementById('t_result').innerHTML = `Error`;
+        }else {
+            if (checkNumber(number)){
+                document.getElementById('t_result').innerHTML = `${number} la so nguyen duong`;
+            }else {
+                document.getElementById('t_result').innerHTML = `${number} khong phai la so nguyen duong`;
+            }
+        }
+    }
+</script>
 </body>
 </html>

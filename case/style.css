@@ -1,5 +1,7 @@
 html {
     font-family: "Poppins", sans-serif;
+    color: #333;
+    background: #f0f0f0;
 }
 
 #app-music {
@@ -9,19 +11,21 @@ html {
 #bg-art {
     width: 100%;
     height: 100vh;
-    background-image: url("../image/17U1K0XDSZQPOHZT.jpg");
-    background-size: 100% auto;
+    background-image: url("image/bautroi.jpg");
+    background-size: cover;
+    background-position: center;
     filter: blur(4px);
     position: fixed;
 }
 
 #cd {
     position: relative;
+    z-index: 1;
 }
 
 #control-player {
     position: absolute;
-    top: 74%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -29,14 +33,14 @@ html {
 #cd-image {
     margin-top: 50px;
     width: 300px;
-    height: auto;
+    height: 300px;
     border: 5px solid white;
     border-radius: 50%;
     box-shadow: 0 18px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 #controls {
-    width: 600px;
+    width: 300px;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -47,98 +51,83 @@ html {
 #infor-control {
     width: 520px;
     height: 140px;
-    background-image: linear-gradient(0, #b0b0b0, #ffffff);
+    background-image: linear-gradient(0deg, #b0b0b0, #ffffff);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    box-shadow: 0 18px 0 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 18px 20px 0 rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #singer-name {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
 }
 
-#time {
+#progress-container {
     display: flex;
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    color: red;
-    transform: translate(-50%, 0);
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
 }
 
 #time-update {
-    margin: 0 186px 0 0;
-
-}
-
-#time-currentSong {
-    display: inline;
-    margin: 0 0 0 186px;
+    margin-right: auto;
 }
 
 #progress {
-    width: 90%;
-    -webkit-appearance: none;
-    height: 6px;
-    background: #ffffff;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: 0.2s;
-    transition: opacity 0.2s;
-}
-
-#progress::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 6px;
-    background-color: red;
-    cursor: pointer;
+    flex: 1;
+    margin: 0 10px;
 }
 
 #btn-control {
     width: 600px;
     height: 100px;
-    background-color: #e1e1e7;
+    background-color: #e7e1e2;
     border-radius: 16px;
-    box-shadow: 20px 18px 20px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 18px 20px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
+    margin-top: 20px;
 }
 
 #backward, #skip, #playing {
-    color: #ff253a;
+    color: black;
     width: 50px;
     height: 50px;
     padding: 10px;
-    font-size: 50px;
-    margin-left: 30px;
-    margin-right: 30px;
+    font-size: 40px;
+    margin: 0 30px;
     cursor: pointer;
-}
-
-#backward:hover, #skip:hover, #playing:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    transition: background-color 0.3s ease;
 }
 
 #repeat, #shuffle {
     width: 30px;
     height: 30px;
     font-size: 26px;
-    margin: 12px 14px 0 14px;
+    margin: 12px 14px;
     cursor: pointer;
-
 }
 
 #list-song {
     position: absolute;
-    background-color: #999999;
-    padding: 12px 12px 0 12px;
-    margin-top: 360px;
+    background-color: blueviolet;
+    padding: 12px;
+    margin-top: 350px;
     left: 50%;
     transform: translate(-50%, 0);
     border-radius: 10px;
+    width: calc(100% - 24px);
+    max-width: 500px;
+    box-shadow: 0 18px 20px 0 rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow scrolling */
+    max-height: 300px; /* Limit height */
 }
 
 .song {
@@ -147,23 +136,20 @@ html {
     margin-bottom: 12px;
     background-color: #fff;
     padding: 8px 16px;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .song.active {
-    background-color: red;
-}
-
-.song:active {
-    opacity: 0.8;
-}
-
-.song.active .option,
-.song.active .author,
-.song.active .title {
+    background-color: skyblue;
     color: #fff;
+}
+
+.song:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
 }
 
 .song .thumb {
@@ -182,11 +168,12 @@ html {
 .song .title {
     font-size: 18px;
     color: black;
+    font-weight: 600;
 }
 
 .song .author {
     font-size: 12px;
-    color: #999;
+    color: #666;
 }
 
 .song .option {
@@ -195,4 +182,204 @@ html {
     font-size: 18px;
 }
 
+#song-actions {
+    margin-top: 20px;
+}
+
+#song-actions button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#song-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#song-form button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#song-form button:hover {
+    background-color: #45a049;
+}
+
+#add-song-form {
+    z-index: 1000;
+    position: absolute;
+    top: 720px;
+    left: 18%;
+    transform: translateX(-50%);
+    background-color: blueviolet;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+#add-song-form input[type="text"] {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#add-song-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#add-song-form button:hover {
+    background-color: #45a049;
+}
+
+#playlist {
+    margin-top: 200px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.song-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.song-item:last-child {
+    border-bottom: none;
+}
+
+.remove-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f;
+}
+
+/*phần xóa nhạc*/
+.song .option {
+    position: relative;
+}
+
+.song .delete-btn {
+    background-color: #ff253a;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    display: none;
+}
+
+.song:hover .delete-btn {
+    display: inline-block;
+}
+
+.song .delete-btn:hover {
+    background-color: #d21f2e;
+}
+
+.song .option .fas {
+    margin-right: 10px;
+}
+
+.song {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.song .thumb {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.song .body {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.song .body .title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.song .body .author {
+    font-size: 14px;
+    color: #666;
+}
 

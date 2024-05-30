@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    // let num = +prompt('nhap so nguyen to');
+    // if (nguyento(num)) {
+    //     document.write(`${num} la so nguyen to`)
+    // } else {
+    //     document.write(`${num} khong phai la so nguyen to`)
+    // }
+    //
+    // function nguyento(number) {
+    //     if (number < 2) {
+    //         return false;
+    //     } else {
+    //         for (let i = 2; i < number; i++) {
+    //             if (number % i === 0) {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+    //     return true;
+    // }
+
+    num = +prompt('nhap so vao kiem tra');
+    alert(isPrime(num));
+
+    function isPrime(num) {
+        if (num < 2 || isNaN(num)) {
+            return false;
+        }else {
+            for (let i = 2; i < Math.sqrt(num); i++) {
+                if (num % 1 === 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+</script>
 </body>
 </html>

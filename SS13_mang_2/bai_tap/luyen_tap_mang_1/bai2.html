@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+            // hiển ra vị trí lớn nhất của mảng và vị trí
+    let arr = [5, 12, 24, 2, 53, 6, 5, 21, 9, 10];
+    let max = arr[0];
+    let viTri = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+          max = arr[i];
+          viTri = i;
+        }
+    }
+    document.write(max + " at position " + viTri);
+</script>
 </body>
 </html>

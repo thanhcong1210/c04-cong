@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+
+                // thêm dấu trừ vào giữa các số chẵn
+    let num = window.prompt();
+    let str = num.toString();
+    let result = [str[0]];
+    for (let x = 0; x < str.length; x++) {
+        if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
+            result.push('-', str[x]);
+        } else {
+            result.push(str[x]);
+        }
+    }
+    console.log(result.join(''));
+</script>
 </body>
 </html>

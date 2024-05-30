@@ -8,14 +8,14 @@
 <script>
     let a = 0, b = 1, temp;
     let count = 20;
-    let i = 0;
-    for (let j = 1; j < count; j++) {
+    let sum = 0;
+    for (let j = 0; j < count; j++) {
         temp = a + b;
+        sum += a;
         a = b;
         b = temp;
-        i = i + temp;
-        document.write(i);
     }
-</script>
+    document.write(sum);
+ </script>
 </body>
 </html>

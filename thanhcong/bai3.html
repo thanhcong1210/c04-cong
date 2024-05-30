@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    function soNguyenTo(number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function timSoNguyenTo(arr) {
+        let primeNumbers = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            if (soNguyenTo(arr[i])) {
+                primeNumbers.push(arr[i]);
+            }
+        }
+        primeNumbers.sort(function(a, b) {
+            return a - b;
+        });
+
+        return primeNumbers;
+    }
+    let inputArray = [1, 5, 13, 6, 23, 8, 47, 11, 3];
+    let result = timSoNguyenTo(inputArray);
+    alert(result);
+</script>
 </body>
 </html>
