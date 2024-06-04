@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getInputArray() {
+        // Nhập độ dài của mảng
+        let n = parseInt(prompt("Nhập độ dài của mảng (số chẵn):"), 10);
+
+        // Kiểm tra n có phải là số chẵn hay không
+        if (isNaN(n) || n <= 0 || n % 2 !== 0) {
+            console.error("Độ dài của mảng phải là một số chẵn dương.");
+            return;
+        }
+
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            let num;
+            do {
+                num = parseInt(prompt(`Nhập phần tử thứ ${i + 1} (số nguyên lớn hơn 10 và nhỏ hơn 100):`), 10);
+            } while (isNaN(num) || num <= 10 || num >= 100);
+            array.push(num);
+        }
+
+        return array;
+    }
+
+    // Lọc các phần tử có hàng đơn vị lớn hơn hàng chục
+    function check(array) {
+        let result = array.filter(num => {
+            let hangChuc = Math.floor(num / 10);
+            let donVi = num % 10;
+            return donVi > hangChuc;
+        });
+        console.log("Các phần tử có hàng đơn vị lớn hơn hàng chục:", result);
+    }
+
+    // Nhập mảng từ bàn phím
+    let inputArray = getInputArray();
+    if (inputArray) {
+        // Hiển thị mảng sau khi nhập
+        console.log("Mảng vừa nhập:", inputArray);
+
+        // Hiển thị các phần tử có hàng đơn vị lớn hơn hàng chục
+        check(inputArray);
+    }
+
+    // let n = +prompt("nhập vào độ dài của mảng :");
+    // let arr = new Array();
+    // for (let i = 0; i < n;) {
+    //     let element = "";
+    //     do {
+    //         element = +prompt("nhập số lớn hơn 10 và nhỏ hơn 100")
+    //     }
+    //     while (element > 10 || element < 100);
+    //     i++;
+    //     arr.push(element);
+    // }
+    // alert(arr)
+    // let brr = [];
+    // for (let i = 0; i < n; i++) {
+    //     let str = arr[i].toString()
+    //     if (str[0] < str[i]) {
+    //         brr.push(arr[i])
+    //     }
+    // }
+    // alert(brr);
+</script>
+</body>
+</html>

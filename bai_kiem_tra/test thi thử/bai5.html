@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //nhập mảng từ bàn phím
+    let input = prompt("nhập mảng các số, cách nhau bởi dấu phẩy : ");
+    let array = input.split(',').map(Number);
+
+    //hiển thị mảng sau khi nhập
+    console.log("mảng vừa nhập: ", array);
+
+    //kiểm tra mảng vừa nhập
+    function checkArray(arr) {
+        for (let i = 0; i < arr.length; i += 2) {
+            if (arr[i] >= arr[i + 1]) {
+                return "NO";
+            }
+        }
+        return "OK";
+    }
+
+    //gọi hàm kiểm tra và hiện thị kết quả
+    //nếu các phần ở liền kề nhau (phần tử thứ 1 < thứ 2) thì hiện "OK" nếu k thì hiện "NO"
+    let result = checkArray(array);
+    console.log(result);
+</script>
+</body>
+</html>

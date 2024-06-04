@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="result"></h1>
+<script>
+                //kiểm tra. nếu số ký tự in hoa bằng ký tự in thường thì trả về true
+    function checkString(str) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] >= 'A' && str[i] <= 'Z') {
+                count++;
+            }
+        }
+        if (count > 0){
+            document.getElementById('result').innerHTML = "true";
+        } else {
+            alert("false");
+        }
+
+    }
+    let inputString = prompt("Nhập chuỗi: ");
+     checkString(inputString);
+</script>
+</body>
+</html>

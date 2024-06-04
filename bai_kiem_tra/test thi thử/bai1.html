@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //nhập 1 mảng từ bàn phím với độ dài n
+    //hiển thị mảng sau khi thêm mới các phần tử
+    let n = +prompt('mời nhập số vào đây');
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let element = prompt("nhập phần tử thứ: " + (n + 1) + ": ");
+        arr.push(element);
+    }
+    alert("mảng đã nhập", arr);
+
+    //kiểm tra mảng, nếu số phần tử chẵn bằng lẻ thì hiện "OK" nếu k thì "NO"
+    let chan = 0;
+    let le = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+            chan += arr[i]
+            alert("ok")
+        } else {
+            le += arr[i]
+            alert("no")
+        }
+    }
+
+</script>
+</body>
+</html>

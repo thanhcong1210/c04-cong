@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // nếu từng phần tử ở vị trí 1/2 mảng sau có giá trị bình phương từng phần tử đầu thì trả về "true"
+    // nếu bất kỳ vị trí nào không đúng thì trả về false
+    function checkArray(arr) {
+        let n = arr.length;
+        if (n % 2 !== 0) {
+            return false;
+        }
+        for (let i = 0; i < n / 2; i++) {
+            if (arr[i] ** 2 !== arr[i + n / 2]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    let arr1 = [1, 2, 3, 1, 4, 9];
+    let arr2 = [2, 1, 3, 1, 1, 9];
+    console.log(checkArray(arr1));
+    console.log(checkArray(arr2));
+</script>
+</body>
+</html>

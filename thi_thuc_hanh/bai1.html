@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("xin moi nhap vao: "));
+    let arr = [];
+    for (let i = 0; i <= n; i++) {
+        if (n >= 20) {
+            alert("moi nhap lai: ");
+            break;
+        } else {
+            let num = parseInt(prompt("nhap so phan tu thu" + (i + 1) + ""));
+            arr.push(num);
+        }
+    }
+
+    let sumChan = 0;
+    let sumLe = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sumChan += arr[i];
+        } else {
+            sumLe += arr[i];
+        }
+    }
+    let result = sumChan - sumLe
+    alert("ket qua : " + result);
+
+
+</script>
+</body>
+</html>

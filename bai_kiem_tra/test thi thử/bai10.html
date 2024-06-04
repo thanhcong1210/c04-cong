@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhập độ dài của mảng: ");
+    let arr = new Array();
+    for (let i = 0; i < n; i++) {
+        let element = +prompt(`nhập phần tử thứ ${i} của mảng`)
+        arr.push(element)
+    }
+    alert(`mảng mới là ${arr}`)
+    let brr = [];
+    for (let i = 0; i < n; i++) {
+        if (Math.sqrt(arr[i]) % 1 == 0) {
+            brr.push(arr[i])
+        }
+    }
+    alert(brr);
+</script>
+</body>
+</html>

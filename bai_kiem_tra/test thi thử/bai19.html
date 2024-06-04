@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Uppercase Characters</title>
+</head>
+<body>
+<script>
+            //hàm trả về một chuỗi là tất cả các ký tự in hoa trong chuỗi
+    function checkString(str) {
+        let uppercaseCount = 0;
+        let lowercaseCount = 0;
+
+        for (let i = 0; i < str.length; i++) {
+            let char = str[i];
+            if (char >= 'A' && char <= 'Z') {
+               uppercaseCount ++;
+            }
+            if (char >= 'a' && char <= 'z') {
+                lowercaseCount++;
+            }
+        }
+        return uppercaseCount == lowercaseCount;
+    }
+
+
+    const inputString = prompt("nhap vao mot chuoi: ");
+    const result = checkString(inputString);
+    if (result){
+        alert("true");
+    }else {
+        alert("false");
+    }
+</script>
+</body>
+</html>

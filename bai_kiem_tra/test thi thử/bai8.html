@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function getInputArray() {
+    //     // Nhập độ dài của mảng
+    //     let n = parseInt(prompt("Nhập độ dài của mảng:"), 10);
+    //
+    //     // Kiểm tra n có phải là số hợp lệ không
+    //     if (isNaN(n) || n <= 0) {
+    //         console.error("Độ dài của mảng phải là một số nguyên dương.");
+    //         return;
+    //     }
+    //
+    //     let array = [];
+    //     for (let i = 0; i < n; i++) {
+    //         let num = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`), 10);
+    //         if (!isNaN(num)) {
+    //             array.push(num);
+    //         } else {
+    //             console.error("Vui lòng nhập một số nguyên hợp lệ.");
+    //             i--; // yêu cầu người dùng nhập lại phần tử này
+    //         }
+    //     }
+    //
+    //     return array;
+    // }
+    //
+    // function countSoLuong(array) {
+    //     if (array.length === 0) return 0;
+    //
+    //     let maxNum = Math.max(...array);
+    //     let count = array.filter(num => num === maxNum).length;
+    //
+    //     return count;
+    // }
+    //
+    // // Nhập mảng từ bàn phím
+    // let inputArray = getInputArray();
+    // if (inputArray) {
+    //     // Hiển thị mảng sau khi nhập
+    //     console.log("Mảng vừa nhập:", inputArray);
+    //
+    //     // Đếm số lượng số lớn nhất trong mảng
+    //     let soLuong = countSoLuong(inputArray);
+    //     console.log(`Số lượng số lớn nhất trong mảng là: ${soLuong}`);
+    // }
+
+    let n = +prompt("nhập độ dài của mảng : ");
+    let arr = new Array();
+    for (let i = 0; i < n; i++) {
+        let element = +prompt(`nhập phần tử giá trị thứ ${i}`);
+        arr.push(element);
+    }
+    console.log(arr);
+    let max = 0;
+    for (let i = 0; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    let count = 0;
+    for (let i = 0; i < n; i++) {
+        if (max == arr[i]) {
+            count++;
+        }
+    }
+    console.log(count);
+</script>
+</body>
+</html>

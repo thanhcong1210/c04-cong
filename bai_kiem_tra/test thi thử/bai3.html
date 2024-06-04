@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //nhập 1 mảng với độ dài n
+    //hiển thị mảng
+    //nếu mảng mới nhập được sắp xếp (tăng/giảm) thì hiện "OK" nếu k thì hiện"NO"
+    let n = +prompt("moi nhap vao: ");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let element = +prompt("nhap phan tu " + (i + 1) + ": ");
+        arr.push(element);
+    }
+    alert("mang da nhap" + arr);
+    if ( tangDan(arr) || giamDan(arr)) {
+        alert("ok");
+    } else {
+        alert("no")
+    }
+
+    function tangDan(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function giamDan(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
+            if (arr[i] < arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+</script>
+</body>
+</html>

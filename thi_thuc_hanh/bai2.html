@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function chuoiKyTu(str) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] >= 'A' && str[i] <= 'Z') {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return count;
+        } else {
+            return "The string does not contain any uppercase characters.";
+        }
+    }
+
+    let inputString = prompt("Nhập chuỗi: ");
+    let result = chuoiKyTu(inputString);
+    alert(result);
+
+</script>
+</body>
+</html>
